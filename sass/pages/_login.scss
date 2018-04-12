@@ -1,0 +1,98 @@
+.login-body {
+  padding: 3rem;
+}
+
+.login-container {
+  max-height: 80%;
+  width: 80%;
+  @include absCenter;
+}
+
+.login {
+  width: 100%;
+  height: calc(100vh - 6rem);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(darken($color-primary, 30%), .78),
+      rgba($color-primary, .78)),
+    url(../img/header.jpg);
+  background-size: cover;
+  background-position: top;
+  text-align: center;
+  padding: 8rem;
+
+  position: relative;
+
+  &__title-container {
+    margin: 0 auto;
+    text-align: center;
+    max-width: 80%;
+  }
+
+  &__title {
+    &--img {
+      max-width: 80%;
+      margin: 1rem 0;
+    }
+  }
+
+  &__form-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 60%;
+  }
+
+  &__form-input {
+    margin: 0 auto 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    background-color: $color-white;
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 60%;
+    display: block;
+    transition: all .3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      border-bottom: 3px solid $color-secondary-2;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-2;
+    }
+
+    &::-webkit-input-placeholder {
+      color: #999;
+    }
+  }
+
+  &__form-button {
+    margin: 0 auto 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: inherit;
+    color: $color-white;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    border: none;
+    background: rgba($color-secondary-2, 1);
+    width: 60%;
+    display: block;
+    transition: all .3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($color-secondary-2, 20%)
+    }
+  }
+}
+
+.secret {
+  color: $color-white;
+}

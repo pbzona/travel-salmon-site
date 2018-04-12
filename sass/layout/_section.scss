@@ -1,0 +1,48 @@
+.section {
+  padding: 10rem 0;
+}
+
+.about {
+	text-align: center;
+
+	&__image-container {
+		height: 36rem;
+		margin: 0 auto $space-md;
+		width: 60%;
+	}
+
+	&__image {
+		background-image: url('../img/forest-2.jpg');
+		background-size: cover;
+		backface-visibility: hidden;
+		border: 0 solid rgba($color-primary, 0);
+		box-shadow: 0 1.2rem 3rem rgba($color-black, 0.4);
+		height: 36rem;
+		margin: 0 auto;
+		width: 90%;
+
+		transition: all .2s;
+
+		&:hover {
+			border: .4rem solid rgba($color-primary, 1);
+			box-shadow: 0 1.5rem 4rem rgba($color-black, 0.3);
+			transform: translateY(-.4rem) scale(1.04);
+		}
+	}
+}
+
+.features {
+	text-align: center;
+  padding: 20rem 0;
+	background-image: linear-gradient(
+			to bottom,
+			rgba($color-primary, 0.7),
+			rgba($color-primary-dark, 0.7)
+		),
+		url(../img/lake.jpg);
+	background-size: cover;
+}
+
+.cta {
+	text-align: center;
+}

@@ -1,0 +1,27 @@
+.banner {
+  background-color: rgba($color-primary-dark, .8);
+	color: $color-white;
+  margin-top: 1rem;
+  padding: 2rem;
+
+  &__icon {
+    font-size: 8rem;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      color: $color-white;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}

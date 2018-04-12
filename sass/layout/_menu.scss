@@ -1,0 +1,53 @@
+.menu {
+  width: 100%;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+  }
+
+  &__list-item {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    list-style-type: none;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: rgba($color-white, 0);
+
+    transition: all .6s ease;
+
+
+    &:hover {
+      background-color: rgba($color-primary-dark, .8);
+      // transform: translateY(-.5rem);
+
+      & > .menu__link {
+        color: white;
+      }
+    }
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:active,
+    &:visited {
+      background-image: linear-gradient(
+        to bottom,
+        $color-primary,
+        darken($color-primary, 30%)
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: rgba($color-primary-dark, .8);
+    }
+  }
+}

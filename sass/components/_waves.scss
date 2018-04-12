@@ -1,0 +1,10 @@
+.waves {
+  &__top {
+    max-width: 100%;
+  }
+
+  &__content {
+    transform: translateY(-2%);
+    background-color: $color-secondary-2;
+  }
+}

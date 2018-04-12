@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Log In | Travel Salmon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <script src="https://unpkg.com/tippy.js@2.5.0/dist/tippy.all.min.js"></script>
+  <script defer src="js/fontawesome-all.min.js"></script>
+</head>
+
+<body class="login-body">
+  <div class="login">
+    <div class="login-container">
+      <div title="<p class='tip'>It looks like the login page is public. Hopefully the admin account uses a secure password (and not the name of an open source AWS library that was mentioned on episode 17 of the Cloud Assessments podcast)...</p>"
+        class="login__title-container">
+        <h1 class="login__title">
+          <img class="login__title--img" src="img/travelsalmon.png" alt="Travel Salmon" />
+        </h1>
+      </div>
+      <div class="login__form-container">
+        <form id="form" class="login__form">
+          <input class="login__form-input login__form-input--username" type="text" id="user-name" placeholder="Username">
+          <input class="login__form-input login__form-input--password" type="password" id="user-password" placeholder="Password">
+          <button class="login__form-button">Submit</button>
+        </form>
+      </div>
+      </div>
+      <div id="container"></div>
+    </div>
+
+
+
+
+  <script src="js/bundle.js"></script>
+  <script>
+    // TODO - delete this before deploying to prod!!!
+    var SECRET_API_KEY = "ac1073cbf30759bb6d1826ea5d70b9b2";
+    var PASSWORD = "admin";
+
+    // See if you can decode Pinehead's secret!
+    var PINEHEAD_SECRET = "V2UgbG92ZSBvdXIgc3R1ZGVudHMh";
+
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    function decode(string) {
+      var result = '';
+
+      var i = 0;
+      do {
+        var b1 = characters.indexOf(string.charAt(i++));
+        var b2 = characters.indexOf(string.charAt(i++));
+        var b3 = characters.indexOf(string.charAt(i++));
+        var b4 = characters.indexOf(string.charAt(i++));
+
+        var a = ((b1 & 0x3F) << 2) | ((b2 >> 4) & 0x3);
+        var b = ((b2 & 0xF) << 4) | ((b3 >> 2) & 0xF);
+        var c = ((b3 & 0x3) << 6) | (b4 & 0x3F);
+
+        result += String.fromCharCode(a) + (b ? String.fromCharCode(b) : '') + (c ? String.fromCharCode(c) : '');
+      } while (i < string.length);
+
+      return result;
+    }
+
+    tippy('[title]', {
+        allowTitleHTML: true,
+        flip: true,
+        size: 'large'
+      });
+  </script>
+</body>
+
+</html>
